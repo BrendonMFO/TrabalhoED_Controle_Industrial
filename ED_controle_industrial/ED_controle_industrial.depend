@@ -1,0 +1,231 @@
+# depslib dependency file v1.0
+1446847673 source:c:\users\brendonmike\desktop\trabalho\ed_controle_industrial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ED_iniciar.h"
+
+1447249785 c:\users\brendonmike\desktop\trabalho\ed_controle_industrial\ed_iniciar.h
+	"ED_eventos.h"
+
+1447250888 c:\users\brendonmike\desktop\trabalho\ed_controle_industrial\ed_eventos.h
+	"ED_linhaproducao.h"
+	<windows.h>
+
+1446845837 c:\users\brendonmike\desktop\trabalho\ed_controle_industrial\ed_linhaproducao.h
+	"ED_equipamentos.h"
+
+1447041605 c:\users\brendonmike\desktop\trabalho\ed_controle_industrial\ed_equipamentos.h
+	<string.h>
+	"ED_botao.h"
+
+1447040406 c:\users\brendonmike\desktop\trabalho\ed_controle_industrial\ed_botao.h
+	"ED_chapaFinal.h"
+
+1447041547 c:\users\brendonmike\desktop\trabalho\ed_controle_industrial\ed_chapafinal.h
+	"ED_imagens.h"
+
+1447008962 c:\users\brendonmike\desktop\trabalho\ed_controle_industrial\ed_imagens.h
+	"Allegro_Fun.h"
+
+1447101367 c:\users\brendonmike\desktop\trabalho\ed_controle_industrial\allegro_fun.h
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<stdarg.h>
+	<string.h>
+	"ED_fun.h"
+
+1447211123 c:\users\brendonmike\desktop\trabalho\ed_controle_industrial\ed_fun.h
+	<time.h>
+	<stdarg.h>
+	"ED_socket_server.h"
+
+1447213384 c:\users\brendonmike\desktop\trabalho\ed_controle_industrial\ed_socket_server.h
+	<winsock.h>
+	<windows.h>
+
+1446844073 source:c:\users\administrador\desktop\ed_controle_industrial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ED_iniciar.h"
+
+1447246185 c:\users\administrador\desktop\ed_controle_industrial\ed_iniciar.h
+	"ED_eventos.h"
+
+1447268431 c:\users\administrador\desktop\ed_controle_industrial\ed_eventos.h
+	"ED_linhaproducao.h"
+	<windows.h>
+
+1446842237 c:\users\administrador\desktop\ed_controle_industrial\ed_linhaproducao.h
+	"ED_equipamentos.h"
+
+1447038005 c:\users\administrador\desktop\ed_controle_industrial\ed_equipamentos.h
+	<string.h>
+	"ED_botao.h"
+
+1447036806 c:\users\administrador\desktop\ed_controle_industrial\ed_botao.h
+	"ED_chapaFinal.h"
+
+1447037947 c:\users\administrador\desktop\ed_controle_industrial\ed_chapafinal.h
+	"ED_imagens.h"
+
+1447005362 c:\users\administrador\desktop\ed_controle_industrial\ed_imagens.h
+	"Allegro_Fun.h"
+
+1447260936 c:\users\administrador\desktop\ed_controle_industrial\allegro_fun.h
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<stdarg.h>
+	<string.h>
+	"ED_fun.h"
+
+1447207523 c:\users\administrador\desktop\ed_controle_industrial\ed_fun.h
+	<time.h>
+	<stdarg.h>
+	"ED_socket_server.h"
+
+1447209784 c:\users\administrador\desktop\ed_controle_industrial\ed_socket_server.h
+	<winsock.h>
+	<windows.h>
+
+1447277152 source:c:\users\brendonmike\desktop\ed_controle_industrial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ED_iniciar.h"
+
+1447278400 c:\users\brendonmike\desktop\ed_controle_industrial\ed_iniciar.h
+	"ED_eventos.h"
+
+1447281642 c:\users\brendonmike\desktop\ed_controle_industrial\ed_eventos.h
+	"ED_linhaproducao.h"
+	<windows.h>
+
+1446845837 c:\users\brendonmike\desktop\ed_controle_industrial\ed_linhaproducao.h
+	"ED_equipamentos.h"
+
+1447041605 c:\users\brendonmike\desktop\ed_controle_industrial\ed_equipamentos.h
+	<string.h>
+	"ED_botao.h"
+
+1447040406 c:\users\brendonmike\desktop\ed_controle_industrial\ed_botao.h
+	"ED_chapaFinal.h"
+
+1447041547 c:\users\brendonmike\desktop\ed_controle_industrial\ed_chapafinal.h
+	"ED_imagens.h"
+
+1447008962 c:\users\brendonmike\desktop\ed_controle_industrial\ed_imagens.h
+	"Allegro_Fun.h"
+
+1447277486 c:\users\brendonmike\desktop\ed_controle_industrial\allegro_fun.h
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<stdarg.h>
+	<string.h>
+	"ED_fun.h"
+
+1447211123 c:\users\brendonmike\desktop\ed_controle_industrial\ed_fun.h
+	<time.h>
+	<stdarg.h>
+	"ED_socket_server.h"
+
+1447213384 c:\users\brendonmike\desktop\ed_controle_industrial\ed_socket_server.h
+	<winsock.h>
+	<windows.h>
+
+1447355923 source:c:\users\administrador\desktop\trabalho-ed---controle-industrial\ed_controle_industrial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ED_iniciar.h"
+
+1447356672 c:\users\administrador\desktop\trabalho-ed---controle-industrial\ed_controle_industrial\ed_iniciar.h
+	"ED_eventos.h"
+
+1447356505 c:\users\administrador\desktop\trabalho-ed---controle-industrial\ed_controle_industrial\ed_eventos.h
+	"ED_linhaproducao.h"
+	<windows.h>
+
+1446842237 c:\users\administrador\desktop\trabalho-ed---controle-industrial\ed_controle_industrial\ed_linhaproducao.h
+	"ED_equipamentos.h"
+
+1447355313 c:\users\administrador\desktop\trabalho-ed---controle-industrial\ed_controle_industrial\ed_equipamentos.h
+	<string.h>
+	"ED_botao.h"
+
+1447354925 c:\users\administrador\desktop\trabalho-ed---controle-industrial\ed_controle_industrial\ed_botao.h
+	"ED_chapaFinal.h"
+
+1447037947 c:\users\administrador\desktop\trabalho-ed---controle-industrial\ed_controle_industrial\ed_chapafinal.h
+	"ED_imagens.h"
+
+1447005362 c:\users\administrador\desktop\trabalho-ed---controle-industrial\ed_controle_industrial\ed_imagens.h
+	"Allegro_Fun.h"
+
+1447355443 c:\users\administrador\desktop\trabalho-ed---controle-industrial\ed_controle_industrial\allegro_fun.h
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<stdarg.h>
+	<string.h>
+	"ED_fun.h"
+
+1447207523 c:\users\administrador\desktop\trabalho-ed---controle-industrial\ed_controle_industrial\ed_fun.h
+	<time.h>
+	<stdarg.h>
+	"ED_socket_server.h"
+
+1447209784 c:\users\administrador\desktop\trabalho-ed---controle-industrial\ed_controle_industrial\ed_socket_server.h
+	<winsock.h>
+	<windows.h>
+
+1447359523 source:c:\users\brendonmike\desktop\trabalho-ed---controle-industrial\ed_controle_industrial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ED_iniciar.h"
+
+1447360272 c:\users\brendonmike\desktop\trabalho-ed---controle-industrial\ed_controle_industrial\ed_iniciar.h
+	"ED_eventos.h"
+
+1447361154 c:\users\brendonmike\desktop\trabalho-ed---controle-industrial\ed_controle_industrial\ed_eventos.h
+	"ED_linhaproducao.h"
+	<windows.h>
+
+1446845837 c:\users\brendonmike\desktop\trabalho-ed---controle-industrial\ed_controle_industrial\ed_linhaproducao.h
+	"ED_equipamentos.h"
+
+1447358913 c:\users\brendonmike\desktop\trabalho-ed---controle-industrial\ed_controle_industrial\ed_equipamentos.h
+	<string.h>
+	"ED_botao.h"
+
+1447358525 c:\users\brendonmike\desktop\trabalho-ed---controle-industrial\ed_controle_industrial\ed_botao.h
+	"ED_chapaFinal.h"
+
+1447041547 c:\users\brendonmike\desktop\trabalho-ed---controle-industrial\ed_controle_industrial\ed_chapafinal.h
+	"ED_imagens.h"
+
+1447008962 c:\users\brendonmike\desktop\trabalho-ed---controle-industrial\ed_controle_industrial\ed_imagens.h
+	"Allegro_Fun.h"
+
+1447361860 c:\users\brendonmike\desktop\trabalho-ed---controle-industrial\ed_controle_industrial\allegro_fun.h
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<stdarg.h>
+	<string.h>
+	"ED_fun.h"
+
+1447211123 c:\users\brendonmike\desktop\trabalho-ed---controle-industrial\ed_controle_industrial\ed_fun.h
+	<time.h>
+	<stdarg.h>
+	"ED_socket_server.h"
+
+1447213384 c:\users\brendonmike\desktop\trabalho-ed---controle-industrial\ed_controle_industrial\ed_socket_server.h
+	<winsock.h>
+	<windows.h>
+

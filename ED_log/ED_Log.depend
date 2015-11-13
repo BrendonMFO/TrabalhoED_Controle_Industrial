@@ -1,0 +1,147 @@
+# depslib dependency file v1.0
+1447184237 source:c:\users\administrador\desktop\teste\ed_log\main.c
+	"ED_texto.h"
+
+1447181014 c:\users\administrador\desktop\teste\ed_log\allegro_fun.h
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<stdio.h>
+
+1447184279 c:\users\administrador\desktop\teste\ed_log\ed_texto.h
+	"Allegro_fun.h"
+
+1447250040 source:c:\users\brendonmike\desktop\trabalho\ed_log\main.c
+	"ED_texto.h"
+
+1447212985 c:\users\brendonmike\desktop\trabalho\ed_log\ed_texto.h
+	"Allegro_fun.h"
+
+1447213294 c:\users\brendonmike\desktop\trabalho\ed_log\allegro_fun.h
+	"ED_dado_cliente.h"
+
+1447213500 c:\users\brendonmike\desktop\trabalho\ed_log\ed_dado_cliente.h
+	<winsock.h>
+	<stdio.h>
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+
+1447250040 source:c:\users\brendonmike\desktop\nova pasta (2)\main.c
+	"ED_texto.h"
+
+1447212985 c:\users\brendonmike\desktop\nova pasta (2)\ed_texto.h
+	"Allegro_fun.h"
+
+1447213294 c:\users\brendonmike\desktop\nova pasta (2)\allegro_fun.h
+	"ED_dado_cliente.h"
+
+1447213500 c:\users\brendonmike\desktop\nova pasta (2)\ed_dado_cliente.h
+	<winsock.h>
+	<stdio.h>
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+
+1447267686 source:c:\users\administrador\desktop\ed_log\main.c
+	"ED_dado_cliente.h"
+
+1447267679 c:\users\administrador\desktop\ed_log\ed_texto.h
+	"Allegro_fun.h"
+
+1447265115 c:\users\administrador\desktop\ed_log\allegro_fun.h
+	<winsock.h>
+	<stdio.h>
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<allegro5/allegro_image.h>
+
+1447267718 c:\users\administrador\desktop\ed_log\ed_dado_cliente.h
+	"ED_texto.h"
+
+1447271286 source:e:\brendon\server\ed_log\main.c
+	"ED_dado_cliente.h"
+
+1447274820 e:\brendon\server\ed_log\ed_dado_cliente.h
+	"ED_texto.h"
+
+1447271279 e:\brendon\server\ed_log\ed_texto.h
+	"Allegro_fun.h"
+
+1447268715 e:\brendon\server\ed_log\allegro_fun.h
+	<winsock.h>
+	<stdio.h>
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<allegro5/allegro_image.h>
+
+1447283228 source:c:\users\brendonmike\desktop\ed_log\main.c
+	"ED_dado_cliente.h"
+
+1447282427 c:\users\brendonmike\desktop\ed_log\ed_dado_cliente.h
+	"ED_texto.h"
+
+1447283228 c:\users\brendonmike\desktop\ed_log\ed_texto.h
+	"Allegro_fun.h"
+
+1447279806 c:\users\brendonmike\desktop\ed_log\allegro_fun.h
+	<winsock.h>
+	<stdio.h>
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<allegro5/allegro_image.h>
+
+1447302173 source:c:\users\brendonmike\documents\github\trabalho-ed---controle-industrial\ed_log\main.c
+	"ED_dado_cliente.h"
+
+1447302309 c:\users\brendonmike\documents\github\trabalho-ed---controle-industrial\ed_log\ed_dado_cliente.h
+	"ED_texto.h"
+
+1447302268 c:\users\brendonmike\documents\github\trabalho-ed---controle-industrial\ed_log\ed_texto.h
+	"Allegro_fun.h"
+
+1447302173 c:\users\brendonmike\documents\github\trabalho-ed---controle-industrial\ed_log\allegro_fun.h
+	<winsock.h>
+	<stdio.h>
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<allegro5/allegro_image.h>
+
+1447348084 source:c:\users\administrador\desktop\trabalho-ed---controle-industrial\ed_log\main.c
+	"ED_dado_cliente.h"
+
+1447349175 c:\users\administrador\desktop\trabalho-ed---controle-industrial\ed_log\ed_dado_cliente.h
+	"ED_texto.h"
+
+1447350120 c:\users\administrador\desktop\trabalho-ed---controle-industrial\ed_log\ed_texto.h
+	"Allegro_fun.h"
+
+1447348022 c:\users\administrador\desktop\trabalho-ed---controle-industrial\ed_log\allegro_fun.h
+	<winsock.h>
+	<stdio.h>
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<allegro5/allegro_image.h>
+
+1447351684 source:c:\users\brendonmike\desktop\trabalho-ed---controle-industrial\ed_log\main.c
+	"ED_dado_cliente.h"
+
+1447365766 c:\users\brendonmike\desktop\trabalho-ed---controle-industrial\ed_log\ed_dado_cliente.h
+	"ED_texto.h"
+
+1447362731 c:\users\brendonmike\desktop\trabalho-ed---controle-industrial\ed_log\ed_texto.h
+	"Allegro_fun.h"
+
+1447361570 c:\users\brendonmike\desktop\trabalho-ed---controle-industrial\ed_log\allegro_fun.h
+	<winsock.h>
+	<stdio.h>
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<allegro5/allegro_image.h>
+

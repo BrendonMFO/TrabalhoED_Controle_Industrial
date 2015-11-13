@@ -1,0 +1,77 @@
+#include "ED_linhaproducao.h"
+#include <windows.h>
+
+//========================================
+// Montar string de comunicacao
+//========================================
+char *string_de_tranferencia(equipamento *_equipamento, char *_nome_linha){
+    char string_de_comunicacao[1024];
+    memset(string_de_comunicacao, 0, 1024);
+    time_t tempo = obter_tempo_atual();
+    struct tm *tempo_formato = localtime(&tempo);
+    sprintf(string_de_comunicacao, "%s - Horario - %s", _nome_linha, _equipamento->Nome, asctime(tempo_formato));
+    return string_de_comunicacao;
+}
+//========================================
+
+//========================================
+// Transferir chapa entre os equipamentos
+//========================================
+void transferir_chapa(equipamento *_equipamento, char *_nome_linha){
+    mudar_estado_equipamento(_equipamento, PREPARANDO);
+    calcular_tempo_preparando(_equipamento);
+    if(_equipamento->Prox == NULL){
+        enviar_resposta_ao_cliente(string_de_tranferencia(_equipamento, _nome_linha));
+    }
+    else{
+        if(_equipamento->Prox->Estado == LIGADO){
+            associar_equipamento_chapa(_equipamento->Prox, _equipamento->chapa);
+            mudar_estado_equipamento(_equipamento->Prox, OCUPADO);
+            renderizar_equipamento(_equipamento->Prox, PREPARANDO);
+        }
+    }
+    _equipamento->chapa = NULL;
+    calcular_tempo_preparando(_equipamento);
+    renderizar_equipamento(_equipamento, PREPARANDO);
+}
+//========================================
+
+//========================================
+// Iniciar operação dos equipamentos
+//========================================
+void start_equipamentos(pilha_equipamento *_equipamento, fila_chapa *_chapas, char *_nome_linha){
+    equipamento *aux = _equipamento->topo; int contador_equipamento;
+    for(contador_equipamento = 0; aux; contador_equipamento++, aux = aux->Prox){
+        switch(aux->Estado){
+            case DESLIGADO:
+                mudar_estado_equipamento(aux, LIGADO);
+                renderizar_botao(&aux->botao_de_controle, 2);
+                renderizar_equipamento(aux, LIGADO);
+                break;
+            case LIGADO:
+                if(!contador_equipamento) equipamento_processar_chapa(aux, criar_nova_chapa(_chapas));
+                break;
+            case OCUPADO:
+                if(chapa_esta_pronta(aux) == FINALIZADO) transferir_chapa(aux, _nome_linha);
+                else renderizar_equipamento(aux, OCUPADO);
+                break;
+            case PREPARANDO:
+                if(equipamento_esta_disponivel_novamente(aux)) renderizar_equipamento(aux, LIGADO);
+                break;
+        }
+    }
+}
+//========================================
+
+//========================================
+// Iniciar linha de produção
+//========================================
+void start(linha_producao *_linha){
+    linha *aux = _linha->topo;
+    while(aux != NULL){
+        start_equipamentos(&aux->equipamentos, &aux->chapas, aux->nome);
+        aux = aux->prox;
+    }
+    al_flip_display();
+}
+//========================================
