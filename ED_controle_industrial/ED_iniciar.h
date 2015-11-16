@@ -62,6 +62,7 @@ int iniciar_operacoes_do_sistema(ALLEGRO_DISPLAY *_janela, ALLEGRO_EVENT_QUEUE *
     if(!iniciar_ALLEGRO() ||
        !criar_janela(&_janela, LARGURA_DA_JANELA, ALTURA_DA_JANELA) ||
        !iniciar_mouse_ALLEGRO(&_janela, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT)) return -1;
+    srand(clock());
     carregar_imagens_do_sistema();
     iniciar_pilha_producao(_linha_de_producao);
     criar_linha_de_producao(_linha_de_producao);

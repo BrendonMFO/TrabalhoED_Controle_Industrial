@@ -1,5 +1,10 @@
 #include "Allegro_fun.h"
 
+//===================================
+// Cores disponiveis
+//===================================
+int CORES[][] = {{255,255,255},{0,0,0}}
+
 //====================================
 // Estrutura de dados para textos
 //====================================
@@ -53,8 +58,8 @@ void Iniciar_fila_textos(fila_textos_t *_fila_textos){
 int Adicionar_novo_texto(fila_textos_t *_fila_textos, texto_t *_texto){
     texto_t *aux = (texto_t*)calloc(1, sizeof(texto_t));
     if(!aux || !_texto) return ERRO;
-    _fila_textos->inicio = !_fila_textos->inicio ? _texto : _fila_textos->inicio;
-    _fila_textos->fim    = !_fila_textos->fim    ? _texto : _fila_textos->fim;
+    _fila_textos->inicio             = !_fila_textos->inicio ? _texto : _fila_textos->inicio;
+    _fila_textos->fim                = !_fila_textos->fim    ? _texto : _fila_textos->fim;
     _fila_textos->fim->proximo_texto = _fila_textos->fim ? _texto : NULL;
     _fila_textos->fim                = _texto;
     return SUCESSO;
@@ -66,9 +71,12 @@ int Adicionar_novo_texto(fila_textos_t *_fila_textos, texto_t *_texto){
 //====================================
 int Renderizar_texto(texto_t *_texto){
     if(!_texto) return ERRO;
-    *_quantidade_textos++;
-    printf("%d\n", _texto->posicao_Y);
-    al_draw_text(fonte_principal, _texto->cor, _texto->posicao_X, _texto->posicao_Y, _texto->flag_allegro, _texto->conteudo);
+    if(quantidade_de_textos >= (17 * ALTURA_DA_TELA) / 1080){
+        quantidade_de_textos = 0;
+        al_draw_scaled_bitmap(fundo, 0, 0, al_get_bitmap_width(fundo), al_get_bitmap_height(fundo), 0, 0, LARGURA_DA_TELA, ALTURA_DA_TELA, 0);
+    }
+    al_draw_text(fonte_principal, _texto->cor, _texto->posicao_X, _texto->posicao_Y + ((45 * ALTURA_DA_TELA) / 1080) * quantidade_de_textos, _texto->flag_allegro, _texto->conteudo);
+    quantidade_de_textos++;
     return SUCESSO;
 }
 //====================================

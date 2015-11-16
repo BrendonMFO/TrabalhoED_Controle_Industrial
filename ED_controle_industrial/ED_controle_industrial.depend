@@ -188,17 +188,17 @@
 	<stdlib.h>
 	"ED_iniciar.h"
 
-1447360272 c:\users\brendonmike\desktop\trabalho-ed---controle-industrial\ed_controle_industrial\ed_iniciar.h
+1447607880 c:\users\brendonmike\desktop\trabalho-ed---controle-industrial\ed_controle_industrial\ed_iniciar.h
 	"ED_eventos.h"
 
-1447361154 c:\users\brendonmike\desktop\trabalho-ed---controle-industrial\ed_controle_industrial\ed_eventos.h
+1447617309 c:\users\brendonmike\desktop\trabalho-ed---controle-industrial\ed_controle_industrial\ed_eventos.h
 	"ED_linhaproducao.h"
 	<windows.h>
 
 1446845837 c:\users\brendonmike\desktop\trabalho-ed---controle-industrial\ed_controle_industrial\ed_linhaproducao.h
 	"ED_equipamentos.h"
 
-1447358913 c:\users\brendonmike\desktop\trabalho-ed---controle-industrial\ed_controle_industrial\ed_equipamentos.h
+1447617175 c:\users\brendonmike\desktop\trabalho-ed---controle-industrial\ed_controle_industrial\ed_equipamentos.h
 	<string.h>
 	"ED_botao.h"
 

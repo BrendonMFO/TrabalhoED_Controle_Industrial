@@ -48,9 +48,12 @@ typedef struct{
 //============================================
 // Criar novo dados
 //============================================
-dados criar_dados(float _gasto, float _temperatura, float _velocidade){
-    dados temp = {_gasto, _temperatura, _velocidade};
-    return temp;
+dados *criar_dados(float _gasto, float _temperatura, float _velocidade){
+    dados *variavel_de_retorno       = (dados*)calloc(1, sizeof(dados));
+    variavel_de_retorno->Gasto       = _gasto;
+    variavel_de_retorno->Temperatura = _temperatura;
+    variavel_de_retorno->Velocidade  = _velocidade;
+    return variavel_de_retorno;
 }
 //============================================
 
@@ -79,7 +82,7 @@ typedef struct s_equipamento{
     char                        *Nome;
     Ed_imagens               	 Imagem;
     dimensao                     Dimensao;
-    dados                        Atributos;
+    dados                       *Atributos;
     data                         Horarios;
     int                          Estado;
     chapa                       *chapa;
@@ -106,7 +109,7 @@ void iniciar_pilha_de_equipamento(pilha_equipamento *_e){
 
 //============================================
 // Criar novo equipamento
-equipamento *criar_novo_equipamento(enum ESTADOS_EQUIPAMENTOS _index_da_imagem, char *_n, dados _d, data _dh){
+equipamento *criar_novo_equipamento(enum ESTADOS_EQUIPAMENTOS _index_da_imagem, char *_n, dados *_d, data _dh){
 //============================================
     equipamento *aux = (equipamento*)calloc(1, sizeof(equipamento));
     if(!aux)return NULL;
@@ -126,7 +129,7 @@ equipamento *criar_novo_equipamento(enum ESTADOS_EQUIPAMENTOS _index_da_imagem, 
 //============================================
 void associar_equipamento_chapa(equipamento *_e, chapa *_c){
     _e->chapa = _c;
-    _e->chapa->tempo_passar_equipamento = obter_tempo_atual() + ( 60 / (_e->Atributos.Temperatura + (_e->Atributos.Velocidade * 2)));
+    _e->chapa->tempo_passar_equipamento = obter_tempo_atual() + ( 60 / (_e->Atributos->Temperatura + (_e->Atributos->Velocidade * 2)));
 }
 //============================================
 
@@ -151,7 +154,6 @@ void calcular_tempo_preparando(equipamento *_equipamento){
 //========================================
 int equipamento_esta_disponivel_novamente(equipamento *_equipamento){
     if((_equipamento->Horarios.Tempo_de_espera - obter_tempo_atual()) <= 0){
-        mudar_estado_equipamento(_equipamento, LIGADO);
         return TRUE;
     }return FALSE;
 }
@@ -177,34 +179,58 @@ int chapa_esta_pronta(equipamento *_equipamento){
 //========================================
 
 //========================================
+// Reiniciar equipamento
+//========================================
+void reiniciar_equipamento(equipamento *_equipamento){
+    _equipamento->Atributos->Temperatura = 1500;
+    _equipamento->Atributos->Velocidade  = 600;
+}
+//========================================
+
+//========================================
 // Equipamento com problema
 //========================================
-void checar_se_equipamento_esta_com_defeito(equipamento *_equipamento){
-    if((_equipamento->Atributos.Temperatura < 900 || _equipamento->Atributos.Temperatura > 2000) ||
-       (_equipamento->Atributos.Velocidade  < 150 || _equipamento->Atributos.Velocidade  > 1000)){
+int checar_se_equipamento_esta_com_defeito(equipamento *_equipamento){
+    if((_equipamento->Atributos->Temperatura < 900 || _equipamento->Atributos->Temperatura > 2000) &&
+       (_equipamento->Atributos->Velocidade  < 150 || _equipamento->Atributos->Velocidade  > 1000)){
         mudar_estado_equipamento(_equipamento, PROBLEMA);
+        mudar_estado_botao(&_equipamento->botao_de_controle, 0);
         renderizar_equipamento(_equipamento,   PROBLEMA);
-        renderizar_botao(&_equipamento->botao_de_controle, 2);
+        renderizar_botao(&_equipamento->botao_de_controle, 1);
         calcular_tempo_preparando(_equipamento);
-        printf("PROBLEMA\n");
+        return TRUE;
     }
+    return FALSE;
 }
 //========================================
 
 //========================================
 // Evento aleatorio de mudança de estado dos equipamentos
 //========================================
-void evento_aleatorio_de_mudanca_de_estado(equipamento *_equipamento){
-    srand(time(NULL));
+int evento_aleatorio_de_mudanca_de_estado(equipamento *_equipamento){
     int probabilidade = rand() % 100 + 1;
-    _equipamento->Atributos.Temperatura += probabilidade > 90 ? ((_equipamento->Atributos.Temperatura / 100) * 20) : 0;
-    _equipamento->Atributos.Velocidade  += probabilidade > 90 ? ((_equipamento->Atributos.Velocidade  / 100) * 20) : 0;
-    _equipamento->Atributos.Temperatura += probabilidade > 85 ? ((_equipamento->Atributos.Temperatura / 100) * 10) : 0;
-    _equipamento->Atributos.Velocidade  += probabilidade > 85 ? ((_equipamento->Atributos.Velocidade  / 100) * 10) : 0;
-    _equipamento->Atributos.Temperatura -= probabilidade < 10 ? ((_equipamento->Atributos.Temperatura / 100) * 30) : 0;
-    _equipamento->Atributos.Velocidade  -= probabilidade < 10 ? ((_equipamento->Atributos.Velocidade  / 100) * 35) : 0;
-    _equipamento->Atributos.Temperatura -= probabilidade < 15 ? ((_equipamento->Atributos.Temperatura / 100) * 25) : 0;
-    _equipamento->Atributos.Velocidade  -= probabilidade < 15 ? ((_equipamento->Atributos.Velocidade  / 100) * 25) : 0;
+    if(_equipamento->Estado != PROBLEMA){
+        if(probabilidade > 90){
+            _equipamento->Atributos->Temperatura += ((_equipamento->Atributos->Temperatura / 100) * 20);
+            _equipamento->Atributos->Velocidade  += ((_equipamento->Atributos->Velocidade  / 100) * 20);
+        }else{
+            if(probabilidade > 85){
+                _equipamento->Atributos->Temperatura += ((_equipamento->Atributos->Temperatura / 100) * 10);
+                _equipamento->Atributos->Velocidade  += ((_equipamento->Atributos->Velocidade  / 100) * 10);
+            }
+        }
+        if(probabilidade < 5){
+            _equipamento->Atributos->Temperatura -= ((_equipamento->Atributos->Temperatura / 100) * 35);
+            _equipamento->Atributos->Velocidade  -= ((_equipamento->Atributos->Velocidade  / 100) * 35);
+        }else{
+            if(probabilidade < 10){
+                _equipamento->Atributos->Temperatura -= ((_equipamento->Atributos->Temperatura / 100) * 15);
+                _equipamento->Atributos->Velocidade  -= ((_equipamento->Atributos->Velocidade  / 100) * 15);
+            }
+        }
+    return checar_se_equipamento_esta_com_defeito(_equipamento);
+    }
+    return FALSE;
 }
 //========================================
 
