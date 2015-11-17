@@ -128,16 +128,16 @@
 	<allegro5/allegro_ttf.h>
 	<allegro5/allegro_image.h>
 
-1447351684 source:c:\users\brendonmike\desktop\trabalho-ed---controle-industrial\ed_log\main.c
+1447773971 source:c:\users\brendonmike\desktop\trabalho-ed---controle-industrial\ed_log\main.c
 	"ED_dado_cliente.h"
 
-1447682026 c:\users\brendonmike\desktop\trabalho-ed---controle-industrial\ed_log\ed_dado_cliente.h
+1447711792 c:\users\brendonmike\desktop\trabalho-ed---controle-industrial\ed_log\ed_dado_cliente.h
 	"ED_texto.h"
 
-1447615786 c:\users\brendonmike\desktop\trabalho-ed---controle-industrial\ed_log\ed_texto.h
+1447775551 c:\users\brendonmike\desktop\trabalho-ed---controle-industrial\ed_log\ed_texto.h
 	"Allegro_fun.h"
 
-1447361570 c:\users\brendonmike\desktop\trabalho-ed---controle-industrial\ed_log\allegro_fun.h
+1447774682 c:\users\brendonmike\desktop\trabalho-ed---controle-industrial\ed_log\allegro_fun.h
 	<winsock.h>
 	<stdio.h>
 	<allegro5/allegro.h>

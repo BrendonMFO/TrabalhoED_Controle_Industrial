@@ -69,3 +69,11 @@ ALLEGRO_COLOR Definir_Cor(int R, int G, int B){
     return variavel_de_retorno;
 }
 //============================================
+
+//============================================
+// Renderizar fundo - Limpar tela
+//============================================
+void Limpar_Tela(){
+    al_draw_scaled_bitmap(fundo, 0, 0, al_get_bitmap_width(fundo), al_get_bitmap_height(fundo), 0, 0, LARGURA_DA_TELA, ALTURA_DA_TELA, 0);
+}
+//============================================

@@ -27,9 +27,8 @@ int main()
 
     al_flip_display();
 
-    while(1){
+    while(Comunicao_servidor(&textos) != ERRO){
         Sleep(1);
-        if((Comunicao_servidor(&textos) == ERRO)) return 0;
     }
 
     return 0;

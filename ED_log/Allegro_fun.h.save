@@ -11,6 +11,7 @@
 enum DIMENSAO_TELA   {LARGURA_DA_TELA = 1920, ALTURA_DA_TELA = 1080};
 enum VALORES_LOGICOS {ERRO, SUCESSO, RESET};
 ALLEGRO_FONT     *fonte_principal = NULL;
+ALLEGRO_BITMAP   *fundo           = NULL;
 int quantidade_de_textos = 0;
 //============================================
 
@@ -68,3 +69,8 @@ ALLEGRO_COLOR Definir_Cor(int R, int G, int B){
     return variavel_de_retorno;
 }
 //============================================
+
+//============================================
+// Renderizar fundo - Limpar tela
+//============================================
+void Limpar_

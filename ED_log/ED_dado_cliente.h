@@ -22,7 +22,7 @@ int Iniciar_Configuracao_Socket(){
     }
     sock.sin_family      = AF_INET;
     sock.sin_port        = htons(1234);
-    sock.sin_addr.s_addr = inet_addr("192.168.0.102");
+    sock.sin_addr.s_addr = inet_addr("172.16.6.115");
     if(connect(winsock,(SOCKADDR*)&sock,sizeof(sock))==SOCKET_ERROR){
         printf("Erro ao se conectar\n");
         return ERRO;

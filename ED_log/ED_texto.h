@@ -33,6 +33,7 @@ texto_t *Criar_Texto(char _conteudo[1024], int _posicao_X, int _posicao_Y, ALLEG
 // Fila dos textos
 //====================================
 typedef struct{
+    int      total_de_textos;
     texto_t *inicio;
     texto_t *fim;
 }fila_textos_t;
@@ -42,8 +43,9 @@ typedef struct{
 // Iniciar fila textos
 //====================================
 void Iniciar_fila_textos(fila_textos_t *_fila_textos){
-    _fila_textos->inicio = NULL;
-    _fila_textos->fim    = NULL;
+    _fila_textos->total_de_textos   = 0;
+    _fila_textos->inicio            = NULL;
+    _fila_textos->fim               = NULL;
 }
 //====================================
 
@@ -51,12 +53,30 @@ void Iniciar_fila_textos(fila_textos_t *_fila_textos){
 // Adicionar novo texto
 //====================================
 int Adicionar_novo_texto(fila_textos_t *_fila_textos, texto_t *_texto){
-    texto_t *aux = (texto_t*)calloc(1, sizeof(texto_t));
-    if(!aux || !_texto) return ERRO;
+    if(!_texto) return ERRO;
     _fila_textos->inicio             = !_fila_textos->inicio ? _texto : _fila_textos->inicio;
     _fila_textos->fim                = !_fila_textos->fim    ? _texto : _fila_textos->fim;
-    _fila_textos->fim->proximo_texto = _fila_textos->fim ? _texto : NULL;
+    _fila_textos->fim->proximo_texto = _fila_textos->fim     ? _texto : NULL;
     _fila_textos->fim                = _texto;
+    _fila_textos->total_de_textos++;
+    return SUCESSO;
+}
+//====================================
+
+//====================================
+// Renderizar determinada quantidade de textos
+//====================================
+int Renderizar_quantidade_determinada_de_textos(fila_textos_t *_fila_textos, int _inicio){
+    if(quantidade_de_textos <= 0) return ERRO;
+    int contador;
+    texto_t *aux = _fila_textos->inicio;
+    Limpar_Tela();
+    quantidade_de_textos = 0;
+    for(contador = 0; aux && (contador <= (17 * ALTURA_DA_TELA) / 1080 && contador < _fila_textos->total_de_textos) ; contador++, aux = aux->proximo_texto){
+        if(contador >= _inicio){
+            Renderizar_texto(aux);
+        }
+    }
     return SUCESSO;
 }
 //====================================
@@ -68,7 +88,7 @@ int Renderizar_texto(texto_t *_texto){
     if(!_texto) return ERRO;
     if(quantidade_de_textos >= (17 * ALTURA_DA_TELA) / 1080){
         quantidade_de_textos = 0;
-        al_draw_scaled_bitmap(fundo, 0, 0, al_get_bitmap_width(fundo), al_get_bitmap_height(fundo), 0, 0, LARGURA_DA_TELA, ALTURA_DA_TELA, 0);
+        Limpar_Tela;
     }
     al_draw_text(fonte_principal, _texto->cor, _texto->posicao_X, _texto->posicao_Y + ((45 * ALTURA_DA_TELA) / 1080) * quantidade_de_textos, _texto->flag_allegro, _texto->conteudo);
     quantidade_de_textos++;

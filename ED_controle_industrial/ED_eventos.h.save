@@ -12,7 +12,7 @@ char *string_de_tranferencia(int _texto, equipamento *_equipamento, char *_nome_
     if(_texto == 0)
         sprintf(string_de_comunicacao, "%d%s  : Horario - %s", _cor, _nome_linha, asctime(tempo_formato));
     else
-        sprintf(string_de_comunicacao, "%d%s  : Horario - %s <<DEFEITO>>", _cor, _nome_linha, asctime(tempo_formato));
+        sprintf(string_de_comunicacao, "%d%s  : Horario - %s DEFEITO", _cor, _equipamento->Nome, asctime(tempo_formato));
     return string_de_comunicacao;
 }
 //========================================
@@ -38,7 +38,8 @@ void transferir_chapa(equipamento *_equipamento, char *_nome_linha){
             _equipamento->chapa = NULL;
         }
     }
-    evento_aleatorio_de_mudanca_de_estado(_equipamento);
+    if(evento_aleatorio_de_mudanca_de_estado(_equipamento))
+        enviar_resposta_ao_cliente(string_de_tranferencia(1, _equipamento, _nome_linha, 1));
 }
 //========================================
 
@@ -98,6 +99,12 @@ void start_equipamentos(pilha_equipamento *_equipamento, fila_chapa *_chapas, AL
                 renderizar_botao(&aux->botao_de_controle, 2);
                 renderizar_equipamento(aux, LIGADO);
                 break;
+                
+                
+                
+                
+                
+
             case LIGADO:
                 if(!contador_equipamento) equipamento_processar_chapa(aux, criar_nova_chapa(_chapas));
                 break;
@@ -112,7 +119,7 @@ void start_equipamentos(pilha_equipamento *_equipamento, fila_chapa *_chapas, AL
                 }
                 break;
             case PROBLEMA:
-                
+
                 if(equipamento_esta_disponivel_novamente(aux));
                 break;
         }
